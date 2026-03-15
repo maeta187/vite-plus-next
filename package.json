@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "prepare": "vp config"
+    "dev": "dotenvx run --convention=nextjs -- next dev",
+    "build": "dotenvx run -f .env.production -f .env -- next build",
+    "start": "dotenvx run -f .env.production -f .env -- next start",
+    "prepare": "vp config",
+    "encrypt" : "pnpm exec dotenvx encrypt"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -14,6 +15,7 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@dotenvx/dotenvx": "^1.55.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
