@@ -1,8 +1,18 @@
 {
-  "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true
-  },
   "permissions": {
-    "allow": ["Bash(git add *)", "Bash(git commit -m ' *)"]
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(vp check *)",
+      "Bash(vp lint *)",
+      "Bash(vp fmt *)"
+    ]
+  },
+  "enabledMcpjsonServers": ["shadcn"],
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
   }
 }
