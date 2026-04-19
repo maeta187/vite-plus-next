@@ -15,7 +15,7 @@ const reactHooksJsRules = Object.fromEntries(
 
 export default defineConfig({
   staged: {
-    '*': 'vp check --fix'
+    '*': 'vp check --fix',
   },
   lint: {
     options: { typeAware: true, typeCheck: true },
@@ -30,20 +30,20 @@ export default defineConfig({
       'react/rules-of-hooks': 'error',
       'react/exhaustive-deps': 'warn',
       ...reactHooksJsRules,
-    }
+    },
   },
   fmt: {
     printWidth: 80,
-    singleQuote: true
+    singleQuote: true,
   },
   test: {
     watch: true,
-    environment: 'jsdom'
+    environment: 'jsdom',
   },
   build: {
-    target: 'es2022'
+    target: 'es2022',
   },
   server: {
-    port: 3000
-  }
-})
+    port: 3000,
+  },
+});
