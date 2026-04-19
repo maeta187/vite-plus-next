@@ -3,8 +3,6 @@
     "frontend-design@claude-plugins-official": true
   },
   "permissions": {
-    "allow": [
-      "Bash(npx skills *)"
-    ]
+    "allow": ["Bash(git add *)", "Bash(git commit -m ' *)"]
   }
 }
