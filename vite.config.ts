@@ -39,6 +39,10 @@ export default defineConfig({
   test: {
     watch: true,
     environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
+    alias: {
+      '@': new URL('./src', import.meta.url).pathname,
+    },
   },
   build: {
     target: 'es2022',
