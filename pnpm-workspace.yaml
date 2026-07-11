@@ -1,3 +1,9 @@
+allowBuilds:
+  msw: true
+  sharp: false
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
+overrides:
+  vite: npm:@voidzero-dev/vite-plus-core@latest
+  vitest: npm:@voidzero-dev/vite-plus-test@latest

@@ -5,7 +5,17 @@
       "Bash(git commit -m ' *)",
       "Bash(vp check *)",
       "Bash(vp lint *)",
-      "Bash(vp fmt *)"
+      "Bash(vp fmt *)",
+      "Bash(corepack --version)",
+      "Bash(npm ls *)",
+      "Bash(corepack use *)",
+      "Bash(npm view *)",
+      "Bash(vp install *)",
+      "Bash(vp test *)",
+      "Bash(git fetch *)",
+      "Bash(git checkout *)",
+      "Bash(git stash *)",
+      "Bash(git pull *)"
     ]
   },
   "enabledMcpjsonServers": ["shadcn"],
