@@ -15,7 +15,13 @@
       "Bash(git fetch *)",
       "Bash(git checkout *)",
       "Bash(git stash *)",
-      "Bash(git pull *)"
+      "Bash(git pull *)",
+      "Bash(git commit *)",
+      "Bash(git branch *)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs",
+      "Bash(vp run *)",
+      "Bash(gh issue *)"
     ]
   },
   "enabledMcpjsonServers": ["shadcn"],
