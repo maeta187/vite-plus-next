@@ -3,6 +3,14 @@
     "shadcn": {
       "command": "vpx",
       "args": ["shadcn@latest", "mcp"]
+    },
+    "chrome-devtools": {
+      "command": "vpx",
+      "args": ["chrome-devtools-mcp@latest"]
+    },
+    "playwright": {
+      "command": "vpx",
+      "args": ["@playwright/mcp@latest"]
     }
   }
 }
