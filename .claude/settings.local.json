@@ -21,7 +21,15 @@
       "mcp__context7__resolve-library-id",
       "mcp__context7__query-docs",
       "Bash(vp run *)",
-      "Bash(gh issue *)"
+      "Bash(gh issue *)",
+      "Bash(vp outdated *)",
+      "Bash(vp update *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(curl -s http://localhost:3000/register -o /dev/null -w \"register page: %{http_code}\\\\n\")",
+      "Read(//private/tmp/claude-501/**)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(jobs -l)",
+      "Bash(vp add *)"
     ]
   },
   "enabledMcpjsonServers": ["shadcn"],
