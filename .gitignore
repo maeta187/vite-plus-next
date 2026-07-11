@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/.playwright-mcp
+.claude/hooks/.last-verified
 
 # next.js
 /.next/

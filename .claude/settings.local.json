@@ -33,10 +33,45 @@
       "Skill(update-config)",
       "Bash(chmod +x *)",
       "Bash(git check-ignore *)",
-      "Bash(echo \"exit:$?\")"
+      "Bash(echo \"exit:$?\")",
+      "Bash(claude mcp *)",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_snapshot",
+      "mcp__chrome-devtools__lighthouse_audit",
+      "mcp__playwright__browser_run_code_unsafe",
+      "mcp__chrome-devtools__close_page",
+      "mcp__playwright__browser_click",
+      "Bash(bash .claude/hooks/stop-ui-verify-reminder.sh)"
     ]
   },
-  "enabledMcpjsonServers": ["shadcn"],
+  "enabledMcpjsonServers": ["shadcn", "chrome-devtools", "playwright"],
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/mark-verification-run.sh",
+            "timeout": 10,
+            "statusMessage": "検証状況を記録中..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/stop-ui-verify-reminder.sh",
+            "timeout": 10,
+            "statusMessage": "UI変更を確認中..."
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
