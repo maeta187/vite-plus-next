@@ -29,7 +29,11 @@
       "Read(//private/tmp/claude-501/**)",
       "Bash(pkill -f \"next dev\")",
       "Bash(jobs -l)",
-      "Bash(vp add *)"
+      "Bash(vp add *)",
+      "Skill(update-config)",
+      "Bash(chmod +x *)",
+      "Bash(git check-ignore *)",
+      "Bash(echo \"exit:$?\")"
     ]
   },
   "enabledMcpjsonServers": ["shadcn"],
