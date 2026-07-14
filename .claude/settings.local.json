@@ -57,7 +57,8 @@
       "Bash(xargs kill -9)",
       "mcp__playwright__browser_take_screenshot",
       "Bash(gh auth *)",
-      "Bash(gh pr *)"
+      "Bash(gh pr *)",
+      "Bash(node scripts/build-claude-md-coordinator.mjs)"
     ]
   },
   "enabledMcpjsonServers": ["shadcn", "chrome-devtools", "playwright"],
