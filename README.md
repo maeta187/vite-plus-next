@@ -20,6 +20,30 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## プランチームによる開発（plan-team-orchestrator）
+
+このプロジェクトには、**計画 → レビュー → 実装 → レビュー** の一連のワークフローを自動で回すスキル `plan-team-orchestrator` が用意されています（定義は `.claude/skills/plan-team-orchestrator/SKILL.md`）。このスキルが全体を統括し、内部で次の3つのサブエージェント（定義は `.claude/agents/`）を協調させて最終結果まで進めます。
+
+- **plan-writer**（計画） — コードベースを調査して実装計画を作成
+- **plan-reviewer**（レビュー） — 計画の妥当性と実装の忠実性をチェック
+- **plan-implementer**（実装） — 承認された計画に沿ってコードを実装し、`vp` で検証
+
+各工程を個別に呼び出す必要はなく、`/plan-team-orchestrator` を実行するだけで、計画の修正ループや実装後のレビュー・修正までまとめて実行されます。
+
+```text
+例: /plan-team-orchestrator パスワードリセット機能を追加
+→ プランチームが一連のワークフローを実行し、最終結果を報告
+```
+
+モデル割り当て:
+
+| 名前                   | 種別             | 役割     | model                        |
+| ---------------------- | ---------------- | -------- | ---------------------------- |
+| plan-team-orchestrator | スキル           | 全体統括 | 呼び出し側セッションのモデル |
+| plan-writer            | サブエージェント | 計画     | Sonnet（最新）               |
+| plan-implementer       | サブエージェント | 実装     | Sonnet（最新）               |
+| plan-reviewer          | サブエージェント | レビュー | Opus（最新）                 |
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
