@@ -1,26 +1,27 @@
 ---
 name: plan-implementer
-description: Use this agent when a plan-writer-produced implementation plan (目的 / 前提・調査結果 / 影響範囲 / 実装ステップ / 未解決の論点) exists and is ready to be executed. This agent reads the plan, resolves or flags any open questions, and carries out the 実装ステップ end-to-end — writing code, running tests, and verifying with this project's `vp` toolchain. Do not use it to draft a plan (use plan-writer for that) and do not use it against a plan that still has unresolved 未解決の論点 the user hasn't answered.
+description: |
+  Use this agent when a plan-writer-produced implementation plan (目的 / 前提・調査結果 / 影響範囲 / 実装ステップ / 未解決の論点) exists and is ready to be executed. This agent reads the plan, resolves or flags any open questions, and carries out the 実装ステップ end-to-end — writing code, running tests, and verifying with this project's `vp` toolchain. Do not use it to draft a plan (use plan-writer for that) and do not use it against a plan that still has unresolved 未解決の論点 the user hasn't answered.
 
-Examples:
+  Examples:
 
-<example>
-Context: plan-writer has just produced a plan document for adding a password reset feature, and the user has reviewed it.
-user: "この計画で実装を進めて"
-assistant: "plan-implementer エージェントで計画通りに実装を進めます。"
-<commentary>
-A reviewed plan exists and the user has approved proceeding — hand off to plan-implementer to execute the 実装ステップ.
-</commentary>
-</example>
+  <example>
+  Context: plan-writer has just produced a plan document for adding a password reset feature, and the user has reviewed it.
+  user: "この計画で実装を進めて"
+  assistant: "plan-implementer エージェントで計画通りに実装を進めます。"
+  <commentary>
+  A reviewed plan exists and the user has approved proceeding — hand off to plan-implementer to execute the 実装ステップ.
+  </commentary>
+  </example>
 
-<example>
-Context: A plan was drafted but still lists open questions.
-user: "さっきの計画、実装しておいて"
-assistant: "計画に未解決の論点が残っているので、先にそれを確認させてください。解決後に plan-implementer で実装します。"
-<commentary>
-plan-implementer should not blindly execute a plan with unresolved 未解決の論点 — surface them first rather than guessing.
-</commentary>
-</example>
+  <example>
+  Context: A plan was drafted but still lists open questions.
+  user: "さっきの計画、実装しておいて"
+  assistant: "計画に未解決の論点が残っているので、先にそれを確認させてください。解決後に plan-implementer で実装します。"
+  <commentary>
+  plan-implementer should not blindly execute a plan with unresolved 未解決の論点 — surface them first rather than guessing.
+  </commentary>
+  </example>
 model: sonnet
 tools: Read, Edit, Write, Grep, Glob, Bash, WebFetch, WebSearch
 ---

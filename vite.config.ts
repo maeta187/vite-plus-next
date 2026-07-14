@@ -18,6 +18,7 @@ export default defineConfig({
     '*': 'vp check --fix',
   },
   lint: {
+    ignorePatterns: ['.claude/agents/**'],
     options: { typeAware: true, typeCheck: true },
     // TypeScript, React, Import, JSX-a11yのESLint規則を有効化
     plugins: ['typescript', 'react', 'import', 'jsx-a11y'],
@@ -33,6 +34,7 @@ export default defineConfig({
     },
   },
   fmt: {
+    ignorePatterns: ['.claude/agents/**'],
     printWidth: 80,
     singleQuote: true,
   },

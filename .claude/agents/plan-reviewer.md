@@ -1,26 +1,27 @@
 ---
 name: plan-reviewer
-description: Use this agent after plan-implementer has executed a plan-writer plan, to review both the plan itself and the resulting implementation. It checks whether the plan is sound (correct scope, no missed risks) and whether the actual code changes faithfully and correctly realize the 実装ステップ, then reports findings. It does not edit code or plans — it only reviews and reports. Also usable standalone to review just a plan before implementation starts, or just a diff against an existing plan.
+description: |
+  Use this agent after plan-implementer has executed a plan-writer plan, to review both the plan itself and the resulting implementation. It checks whether the plan is sound (correct scope, no missed risks) and whether the actual code changes faithfully and correctly realize the 実装ステップ, then reports findings. It does not edit code or plans — it only reviews and reports. Also usable standalone to review just a plan before implementation starts, or just a diff against an existing plan.
 
-Examples:
+  Examples:
 
-<example>
-Context: plan-implementer just finished executing a plan and reported which steps were done.
-user: "実装が終わったのでレビューして"
-assistant: "plan-reviewer エージェントで計画と実装の両方をレビューします。"
-<commentary>
-Implementation is complete — hand off to plan-reviewer to check the plan's soundness and whether the diff actually matches the 実装ステップ.
-</commentary>
-</example>
+  <example>
+  Context: plan-implementer just finished executing a plan and reported which steps were done.
+  user: "実装が終わったのでレビューして"
+  assistant: "plan-reviewer エージェントで計画と実装の両方をレビューします。"
+  <commentary>
+  Implementation is complete — hand off to plan-reviewer to check the plan's soundness and whether the diff actually matches the 実装ステップ.
+  </commentary>
+  </example>
 
-<example>
-Context: A plan was drafted by plan-writer but not yet implemented, and the user wants a sanity check first.
-user: "この計画、実装前に一度チェックしてほしい"
-assistant: "plan-reviewer エージェントで計画のみをレビューします（実装はまだ無いので差分チェックはスキップします）。"
-<commentary>
-plan-reviewer can review a plan on its own before any code exists — it adapts its output to skip the implementation-fidelity section when there's no diff yet.
-</commentary>
-</example>
+  <example>
+  Context: A plan was drafted by plan-writer but not yet implemented, and the user wants a sanity check first.
+  user: "この計画、実装前に一度チェックしてほしい"
+  assistant: "plan-reviewer エージェントで計画のみをレビューします（実装はまだ無いので差分チェックはスキップします）。"
+  <commentary>
+  plan-reviewer can review a plan on its own before any code exists — it adapts its output to skip the implementation-fidelity section when there's no diff yet.
+  </commentary>
+  </example>
 model: opus
 tools: Read, Grep, Glob, Bash, WebFetch, WebSearch
 ---
