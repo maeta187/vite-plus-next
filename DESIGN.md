@@ -273,6 +273,10 @@ The color story is starkly binary. Product sections alternate between pure black
 - Don't center-align body text — Apple body copy is left-aligned; only headlines center
 - Don't use rounded corners larger than 12px on rectangular elements (980px is for pills only)
 
+### Exceptions
+
+- **Pokémon type badges**: The Pokémon list feature (`src/app/pokemon-list/`) is an explicit, approved exception to the "single accent color" rule. Type badges use each type's conventional color (fire = red family, water = blue family, grass = green family, etc.) so that types remain instantly recognizable. This exception applies **only** to the badge background color — the surrounding card layout, typography, corner radius, and shadow still follow the rules above (light gray `#f5f5f7` card, 8px radius, no border, single soft shadow). Apple Blue (`#0071e3`) remains the sole accent everywhere else, including the pagination links.
+
 ## 8. Responsive Behavior
 
 ### Breakpoints
